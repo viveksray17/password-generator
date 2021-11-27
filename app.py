@@ -7,8 +7,8 @@ def generate_password(length):
     uppercasealphabets = list(string.ascii_uppercase)
     numbers = list(range(9))
     password = []
+    choices = ["lowercasestrings", "uppercasestrings", "numbers"]
     for i in range(length):
-        choices = ["lowercasestrings", "uppercasestrings", "numbers"]
         choice = random.choice(choices)
         if choice == "lowercasestrings":
             alpha1 = random.choice(lowercasealphabets)
