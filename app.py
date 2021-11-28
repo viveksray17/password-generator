@@ -23,5 +23,16 @@ def generate_password(length):
 
 
 if __name__ == "__main__":
-    get_length = int(input("enter the length: "))
-    print(generate_password(length=get_length))
+    password = generate_password(length=20)
+    print(password)
+    while True:
+        save_or_not = input("Would you like to save?(y/n): ")
+        if save_or_not == "y" or save_or_not == "n":
+            break
+        else:
+            print("Enter y or n only")
+            continue
+    if save_or_not == "y":
+        name = str(input("Enter the name for the service: "))
+        with open('passwords.txt', 'a') as f:
+            f.write(f"{name}: {password}\n")
