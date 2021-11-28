@@ -27,12 +27,20 @@ if __name__ == "__main__":
     print(password)
     while True:
         save_or_not = input("Would you like to save?(y/n): ")
-        if save_or_not == "y" or save_or_not == "n":
+        if save_or_not == "y" or "n":
             break
         else:
             print("Enter y or n only")
             continue
     if save_or_not == "y":
         name = str(input("Enter the name for the service: "))
-        with open('passwords.txt', 'a') as f:
-            f.write(f"{name}: {password}\n")
+        while True:
+            are_you_sure = input("Are you sure?(y/n): ")
+            if are_you_sure == "y" or "n":
+                break
+            else:
+                print("Enter y or n only")
+                continue
+        if are_you_sure == "y":
+            with open('passwords.txt', 'a') as f:
+                f.write(f"{name}: {password}\n")
